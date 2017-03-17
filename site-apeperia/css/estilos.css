@@ -1,3 +1,16 @@
+.borda-arredondada {
+  -webkit-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+}
+.sombra-padrao {
+  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+}
+.image-replacement {
+  text-indent: -9999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
 /** Geral **/
 body {
   font-family: "Roboto Slab", serif;
@@ -31,25 +44,25 @@ header {
 header .container {
   position: relative;
 }
-.menu-opcoes {
+.menu-principal {
   position: absolute;
   right: 0;
   top: -0.5em;
   font-size: 1.2em;
   font-weight: lighter;
 }
-.menu-opcoes ul {
+.menu-principal ul {
   padding-left: 0;
 }
-.menu-opcoes li {
+.menu-principal li {
   display: inline-block;
   width: 5em;
 }
-.menu-opcoes a {
+.menu-principal a {
   color: white;
   text-decoration: none;
 }
-.menu-opcoes a:hover {
+.menu-principal:hover {
   text-decoration: underline;
 }
 /** Destaque **/
@@ -75,14 +88,21 @@ header .container {
 }
 .destaque button {
   margin-top: 1em;
-  background: #c24e4b;
+  background: #66DDDD;
   border: 0;
   padding: .6em;
   font-size: 1.2em;
   -webkit-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
   border-radius: 0.3em;
   box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
   font-weight: bold;
+}
+.destaque button:hover {
+  background: #304756;
+}
+.destaque button:active {
+  background: #0c1114;
 }
 /** Sobre **/
 .sobre {
@@ -148,7 +168,7 @@ header .container {
 .plano h3 {
   color: #fff;
   font-size: 1.8em;
-  background: #c24e4b;
+  background: #66DDDD;
   text-align: center;
   height: 2em;
   padding-top: .6em;
@@ -156,7 +176,7 @@ header .container {
 }
 .plano div {
   text-align: center;
-  color: #c24e4b;
+  color: #66DDDD;
   font-size: 2.75em;
 }
 .itens-plano {
@@ -176,13 +196,14 @@ header .container {
   float: right;
 }
 .plano button {
-  background: #c24e4b;
+  background: #66DDDD;
   border: 0;
   color: #fff;
   width: 210px;
   height: 38px;
   font-size: 1.2em;
   -webkit-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
   border-radius: 0.3em;
   box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
   margin-left: 2em;
@@ -254,18 +275,20 @@ textarea {
   margin-bottom: .8em;
   padding: 4px 8px;
   -webkit-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
   border-radius: 0.3em;
   border: 2px solid #ccc;
 }
 .contato button {
   margin: 0 auto;
-  background: #c24e4b;
+  background: #66DDDD;
   border: 0;
   color: #fff;
   width: 210px;
   height: 38px;
   font-size: 1.2em;
   -webkit-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
   border-radius: 0.3em;
   box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
 }

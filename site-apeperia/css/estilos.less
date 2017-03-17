@@ -1,6 +1,23 @@
+//variaveis
 @cor-padrao: #c24e4b;
-@cor-secundaria: orange;
+@cor-auxiliar: #1e2c35;
+@cor-branca: #fff;
+@raio-da-borda: 0.3em;
 
+//Mixins
+.borda-arredondada{
+  -webkit-border-radius: @raio-da-borda;
+  -o-border-radius:@raio-da-borda;
+  border-radius: @raio-da-borda;
+}
+.sombra-padrao{
+  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+}
+.image-replacement{
+  text-indent: -9999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
 /** Geral **/
 body {
   font-family: "Roboto Slab", serif;
@@ -31,7 +48,7 @@ h2 {
 /** Header **/
 header {
   border-top: 5px solid @cor-padrao;
-  background: rgba(30, 44, 53, 0.8);
+  background: fade(@cor-auxiliar, 80);
   height: 90px;
   width: 100%;
   position: absolute;
@@ -41,30 +58,26 @@ header .container {
   position: relative;
 }
 
-.menu-opcoes {
+.menu-principal {
   position: absolute;
   right: 0;
   top: -.5em;
   font-size: 1.2em;
   font-weight: lighter;
-}
-
-.menu-opcoes ul {
-  padding-left: 0;
-}
-
-.menu-opcoes li {
-  display: inline-block;
-  width: 5em;
-}
-
-.menu-opcoes a {
-  color: white;
-  text-decoration: none;
-}
-
-.menu-opcoes a:hover {
-  text-decoration: underline;
+  ul{
+    padding-left: 0;
+  }
+  li{
+    display: inline-block;
+    width: 5em;
+  }
+  a{
+    color: white;
+    text-decoration: none;
+  }
+  &:hover{
+    text-decoration: underline;
+  }
 }
 
 /** Destaque **/
@@ -94,17 +107,20 @@ header .container {
 
 .destaque button {
   margin-top: 1em;
-  background: @cor-padrao;
+  background: #66DDDD;
   border: 0;
   padding: .6em;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  .borda-arredondada;
+  .sombra-padrao;
   font-weight: bold;
 }
-
-
+.destaque button:hover{
+	background:lighten(@cor-auxiliar,10);
+}
+.destaque button:active{
+	background:darken(@cor-auxiliar,10);
+}
 /** Sobre **/
 .sobre {
   background: #ebebeb;
@@ -137,9 +153,7 @@ header .container {
   display: inline-block;
   width: 50px;
   height: 60px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  .image-replacement;
   background-position: center;
   margin: 1em 1.5em 0 0;
 }
@@ -162,11 +176,11 @@ header .container {
 
 /** Planos **/
 .planos {
-  background: #1e2c35;
+  background: @cor-auxiliar;
 }
 
 .planos h2 {
-  color: #fff;
+  color: @cor-branca;
 }
 
 .plano {
@@ -182,9 +196,9 @@ header .container {
 }
 
 .plano h3 {
-  color: #fff;
+  color: @cor-branca;
   font-size: 1.8em;
-  background: @cor-padrao;
+  background: #66DDDD;
   text-align: center;
   height: 2em;
   padding-top: .6em;
@@ -193,40 +207,37 @@ header .container {
 
 .plano div {
   text-align: center;
-  color: @cor-padrao;
+  color: #66DDDD;
   font-size: 2.75em;
 }
 
 .itens-plano {
   padding-left: 1.2em;
+  li {
+    font-size: 1em;
+    list-style: none;
+    border-bottom: 1px solid #acacac;
+    padding: .5em;
+    width: 14.8em;
+  }
+  li:last-child {
+    border: 0;
+  }
+  span {
+    float: right;
+  }
 }
 
-.itens-plano li {
-  font-size: 1em;
-  list-style: none;
-  border-bottom: 1px solid #acacac;
-  padding: .5em;
-  width: 14.8em;
-}
-
-.itens-plano li:last-child {
-  border: 0;
-}
-
-.itens-plano span {
-  float: right;
-}
 
 .plano button {
-  background: @cor-padrao;
+  background: #66DDDD;
   border: 0;
-  color: #fff;
+  color: @cor-branca;
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  .borda-arredondada;
+  .sombra-padrao;
   margin-left: 2em;
 }
 
@@ -309,22 +320,20 @@ textarea {
   width: 100%;
   margin-bottom: .8em;
   padding: 4px 8px;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
+  .borda-arredondada;
   border: 2px solid #ccc;
 }
 
 .contato button {
   margin: 0 auto;
-  background: @cor-padrao;
+  background: #66DDDD;
   border: 0;
-  color: #fff;
+  color: @cor-branca;
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  .borda-arredondada;
+  .sombra-padrao;
 }
 
 /** Footer **/
@@ -347,7 +356,7 @@ footer::after {
 
 footer::before {
   content: "";
-  background: #1e2c35;
+  background: @cor-auxiliar;
   top: 0;
   left: 0;
   bottom: 0;
@@ -392,7 +401,7 @@ footer .container img {
 }
 
 footer a {
-  color: #fff;
+  color: @cor-branca;
   text-decoration: none;
 }
 
@@ -404,9 +413,7 @@ footer a {
   display: block;
   width: 55px;
   height: 55px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  .image-replacement;
   margin-left: 1em;
 }
 
